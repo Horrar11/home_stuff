@@ -11,6 +11,10 @@ class Rectangle:
         self.y = origin.getY()
         self.area = width * length
         self.perimeter = 2*(length+width)
+        self.quad1Point = Point(origin.getX() + length,origin.getY() + width)
+        self.quad2Point = Point(origin.getX(), origin.getY() + width)
+        self.quad3Point = origin
+        self.quad4Point = Point(origin.getX() + length,origin.getY())
     def getArea(self):
         return self.area
     def getPerimeter(self):
@@ -23,4 +27,10 @@ Origin Point: (%d,%d)
 Length: %d
 Width: %d
 Area: %d
-Perimeter: %d""" % (self.x,self.y,self.length,self.width,self.area,self.perimeter)
+Perimeter: %d
+
+The 4 corners of this Rectangle are:
+%s
+%s
+%s
+%s""" % (self.x,self.y,self.length,self.width,self.area,self.perimeter, self.quad1Point,self.quad2Point,self.quad3Point,self.quad4Point)
